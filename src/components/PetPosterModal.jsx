@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { usePaws } from '../context/PawsContext';
 import { X, Printer, Download, Copy, Check, Share2, Phone, MapPin, Calendar, Tag, Info, MessageCircle } from 'lucide-react';
-import html2canvas from 'html2canvas-pro';
+
 
 export const PetPosterModal = ({ pet, onClose }) => {
   const { siteConfig, currency } = usePaws();
@@ -80,18 +80,17 @@ Please share this with your friends, family, and neighborhood groups! Thank you 
 
   return (
     <div className="fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
-      
+
       {/* Modal Container */}
       <div className="bg-slate-900 border border-slate-800 rounded-3xl max-w-4xl w-full overflow-hidden shadow-2xl my-auto max-h-[92vh] flex flex-col">
-        
+
         {/* Controls Bar */}
         <div className="bg-slate-950 px-6 py-4 border-b border-slate-800 flex items-center justify-between shrink-0 no-print">
           <div className="flex items-center gap-3">
-            <span className={`px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider ${
-              pet.status === 'missing' ? 'bg-red-600 text-white' :
+            <span className={`px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider ${pet.status === 'missing' ? 'bg-red-600 text-white' :
               pet.status === 'sighted' ? 'bg-amber-500 text-slate-950' :
-              'bg-emerald-500 text-slate-950'
-            }`}>
+                'bg-emerald-500 text-slate-950'
+              }`}>
               {pet.status === 'missing' ? 'MISSING PET' : pet.status === 'sighted' ? 'SIGHTED' : 'REUNITED'}
             </span>
             <span className="text-xs font-medium text-slate-400">Notice #{pet.id}</span>
@@ -126,7 +125,7 @@ Please share this with your friends, family, and neighborhood groups! Thank you 
 
         {/* Modal Scrollable Body */}
         <div className="p-4 sm:p-6 overflow-y-auto space-y-6 flex-1">
-          
+
           {/* HIGH-VISIBILITY STREET PRINTABLE POSTER CONTAINER */}
           <div
             id="printable-poster"
@@ -173,7 +172,7 @@ Please share this with your friends, family, and neighborhood groups! Thank you 
 
             {/* MAIN POSTER GRID: PET PHOTO & VITAL INFORMATION */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start my-4">
-              
+
               {/* Pet Photo Frame */}
               <div className="space-y-4">
                 <div style={{ borderColor: '#0f172a', backgroundColor: '#f8fafc' }} className="aspect-square w-full rounded-2xl overflow-hidden border-4 shadow-xl relative">
@@ -191,7 +190,7 @@ Please share this with your friends, family, and neighborhood groups! Thank you 
 
               {/* Vital Information Details */}
               <div className="space-y-4">
-                
+
                 {/* Location & Time */}
                 <div style={{ backgroundColor: '#f1f5f9', borderColor: '#cbd5e1' }} className="p-4 rounded-2xl border-2 space-y-3">
                   <div className="flex items-start gap-3">
@@ -285,11 +284,11 @@ Please share this with your friends, family, and neighborhood groups! Thank you 
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 text-center">
-                
+
                 {/* Instagram Icon */}
                 <div style={{ backgroundColor: '#f8fafc', borderColor: '#cbd5e1' }} className="p-2.5 rounded-xl border flex items-center justify-center gap-2">
                   <svg className="w-5 h-5 fill-current shrink-0" style={{ color: '#db2777' }} viewBox="0 0 24 24">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                   </svg>
                   <span style={{ color: '#1e293b' }} className="text-[11px] font-bold">Instagram</span>
                 </div>
@@ -297,7 +296,7 @@ Please share this with your friends, family, and neighborhood groups! Thank you 
                 {/* TikTok Icon */}
                 <div style={{ backgroundColor: '#f8fafc', borderColor: '#cbd5e1' }} className="p-2.5 rounded-xl border flex items-center justify-center gap-2">
                   <svg className="w-5 h-5 fill-current shrink-0" style={{ color: '#0f172a' }} viewBox="0 0 24 24">
-                    <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64c.29 0 .56.04.82.1v-3.5a6.37 6.37 0 00-.82-.05A6.34 6.34 0 003.15 15.6a6.34 6.34 0 0010.86 4.45V11.2a8.27 8.27 0 005.58 2.15v-3.5a4.8 4.8 0 01-3.4-1.46 4.83 4.83 0 01-1.46-3.4h3.45v1.7z"/>
+                    <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64c.29 0 .56.04.82.1v-3.5a6.37 6.37 0 00-.82-.05A6.34 6.34 0 003.15 15.6a6.34 6.34 0 0010.86 4.45V11.2a8.27 8.27 0 005.58 2.15v-3.5a4.8 4.8 0 01-3.4-1.46 4.83 4.83 0 01-1.46-3.4h3.45v1.7z" />
                   </svg>
                   <span style={{ color: '#1e293b' }} className="text-[11px] font-bold">TikTok</span>
                 </div>
@@ -305,7 +304,7 @@ Please share this with your friends, family, and neighborhood groups! Thank you 
                 {/* Linktree Icon */}
                 <div style={{ backgroundColor: '#f8fafc', borderColor: '#cbd5e1' }} className="p-2.5 rounded-xl border flex items-center justify-center gap-2">
                   <svg className="w-5 h-5 fill-current shrink-0" style={{ color: '#059669' }} viewBox="0 0 24 24">
-                    <path d="M13.511 5.853l3.963-3.963 1.414 1.414-3.963 3.963 3.963 3.963-1.414 1.414-3.963-3.963v6.321h-2v-6.321l-3.963 3.963-1.414-1.414 3.963-3.963-3.963-3.963 1.414-1.414 3.963 3.963v-4.853h2v4.853zm-6.511 12.147h10v2h-10z"/>
+                    <path d="M13.511 5.853l3.963-3.963 1.414 1.414-3.963 3.963 3.963 3.963-1.414 1.414-3.963-3.963v6.321h-2v-6.321l-3.963 3.963-1.414-1.414 3.963-3.963-3.963-3.963 1.414-1.414 3.963 3.963v-4.853h2v4.853zm-6.511 12.147h10v2h-10z" />
                   </svg>
                   <span style={{ color: '#1e293b' }} className="text-[11px] font-bold">Linktree</span>
                 </div>
@@ -313,7 +312,7 @@ Please share this with your friends, family, and neighborhood groups! Thank you 
                 {/* LinkedIn Icon */}
                 <div style={{ backgroundColor: '#f8fafc', borderColor: '#cbd5e1' }} className="p-2.5 rounded-xl border flex items-center justify-center gap-2">
                   <svg className="w-5 h-5 fill-current shrink-0" style={{ color: '#0284c7' }} viewBox="0 0 24 24">
-                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.74a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26Z"/>
+                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.74a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26Z" />
                   </svg>
                   <span style={{ color: '#1e293b' }} className="text-[11px] font-bold">LinkedIn</span>
                 </div>

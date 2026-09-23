@@ -42,6 +42,12 @@ const SOCIAL_LINKS = {
   linkedin: null
 };
 
+// Poster specific QR codes
+const POSTER_QR = {
+  instagram: "/qrcodes/instagram.png",
+  linktree: "/qrcodes/linktree.png"
+};
+
 export const PawsProvider = ({ children }) => {
   // 1. Pet Listings State
   const [pets, setPets] = useState(() => {
